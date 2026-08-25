@@ -1,0 +1,29 @@
+.mobile-bottom-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-cta {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    z-index: 950;
+    border-top: 1px solid var(--border-thin);
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-bottom-cta .btn {
+    flex: 1;
+    border-radius: 0;
+    border: none;
+    padding: 16px 0;
+  }
+
+  .mobile-bottom-cta .btn-outline {
+    border-right: 1px solid var(--border-thin);
+    color: var(--gray-light);
+  }
+}

@@ -1,0 +1,58 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  opacity: 1;
+  transition: opacity 0.6s var(--ease);
+}
+
+.loading-screen.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: fadeIn 0.9s var(--ease);
+}
+
+.loading-year {
+  font-family: var(--font-en);
+  font-size: clamp(40px, 8vw, 72px);
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.loading-classic {
+  font-family: var(--font-en);
+  font-size: clamp(16px, 2.4vw, 22px);
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  margin-left: 0.5em;
+}
+
+.loading-text {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gray);
+  animation: pulse 1.6s var(--ease) infinite;
+}
+
+@media (max-width: 768px) {
+  .loading-year {
+    font-size: 40px;
+  }
+  .loading-classic {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,133 @@
+.footer {
+  background: var(--black);
+  border-top: 1px solid var(--border-white);
+  padding-top: 80px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.4fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border-white);
+}
+
+.footer-logo {
+  font-family: var(--font-en);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.footer-logo span {
+  color: var(--gold);
+  margin-left: 4px;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.footer-sns a {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+  transition: color var(--transition-fast);
+}
+
+.footer-sns a:hover {
+  color: var(--gold);
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-nav a {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover {
+  color: var(--gold);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.footer-info-label {
+  display: inline-block;
+  width: 110px;
+  color: var(--gray-light);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--gray);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-info {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 56px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .footer-sns {
+    justify-content: center;
+  }
+
+  .footer-info {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

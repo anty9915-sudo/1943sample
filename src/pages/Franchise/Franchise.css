@@ -1,0 +1,244 @@
+.franchise-hero-sub {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--gray-light);
+}
+
+.franchise-hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.strength-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.strength-card {
+  border: 1px solid var(--border-white);
+  padding: 40px 26px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.strength-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+}
+
+.strength-num {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.strength-card h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.strength-card p {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.franchise-cost-notice {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.cost-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.cost-card {
+  border: 1px solid var(--border-white);
+  padding: 36px;
+}
+
+.cost-card-head h3 {
+  font-family: var(--font-en);
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+.cost-card-head p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.cost-items {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-white);
+}
+
+.cost-items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.cost-items li span {
+  color: var(--gray-light);
+}
+
+.cost-items li strong {
+  font-weight: 400;
+  font-family: var(--font-en);
+}
+
+.cost-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-thin);
+  font-size: 16px;
+}
+
+.cost-total span {
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+}
+
+.cost-total strong {
+  font-family: var(--font-en);
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.process-timeline {
+  margin-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border-white);
+}
+
+.process-step {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding-top: 56px;
+}
+
+.process-num {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-size: 14px;
+  background: var(--black);
+  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.process-step.is-visible .process-num {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.process-step h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .strength-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cost-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-hero-buttons {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .strength-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-timeline {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .process-timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 22px;
+    width: 1px;
+    height: auto;
+    right: auto;
+  }
+
+  .process-step {
+    text-align: left;
+    padding-top: 0;
+    padding-left: 64px;
+  }
+
+  .process-num {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .process-step.is-visible .process-num {
+    transform: scale(1.1);
+  }
+}

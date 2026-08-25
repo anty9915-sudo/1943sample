@@ -1,0 +1,155 @@
+.brand-story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.brand-story-image {
+  height: 420px;
+}
+
+.brand-story-media {
+  height: 100%;
+}
+
+.brand-story-text .section-title {
+  margin: 16px 0 20px;
+}
+
+.philosophy-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.philosophy-card {
+  position: relative;
+  border: 1px solid var(--border-white);
+  padding: 26px 22px 30px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.philosophy-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.philosophy-num {
+  font-family: var(--font-en);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.philosophy-thumb {
+  height: 170px;
+  margin: 16px 0 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.philosophy-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.philosophy-card:hover .philosophy-thumb::after {
+  opacity: 1;
+}
+
+.philosophy-thumb::before {
+  transition: transform var(--transition-slow);
+}
+
+.philosophy-card:hover .philosophy-thumb::before,
+.philosophy-card:hover .philosophy-thumb img {
+  transform: scale(1.1);
+}
+
+.philosophy-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.philosophy-card p {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.philosophy-more {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  transition: transform var(--transition-fast);
+}
+
+.philosophy-card:hover .philosophy-more {
+  transform: translateX(6px);
+}
+
+.interior {
+  text-align: center;
+}
+
+.interior-desc {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.interior-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 340px 220px;
+  gap: 20px;
+  text-align: left;
+}
+
+.interior-main {
+  grid-column: 1 / -1;
+}
+
+.interior-img {
+  border: 1px solid var(--border-thin);
+  will-change: transform;
+}
+
+@media (max-width: 1024px) {
+  .brand-story-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interior-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .interior-main {
+    height: 260px;
+  }
+
+  .interior-sub {
+    height: 200px;
+  }
+}

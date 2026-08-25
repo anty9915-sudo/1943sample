@@ -1,0 +1,232 @@
+.menu-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.menu-categories {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-categories button {
+  padding: 10px 22px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  border: 1px solid var(--border-white);
+  color: var(--gray-light);
+  transition: all var(--transition-fast);
+}
+
+.menu-categories button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.menu-categories button.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.menu-search input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-white);
+  color: var(--white);
+  padding: 10px 4px;
+  font-size: 14px;
+  min-width: 220px;
+  transition: border-color var(--transition-fast);
+}
+
+.menu-search input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.menu-search input::placeholder {
+  color: var(--gray);
+}
+
+.menu-empty {
+  text-align: center;
+  color: var(--gray);
+  padding: 80px 0;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.menu-card {
+  text-align: left;
+  border: 1px solid var(--border-white);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  width: 100%;
+}
+
+.menu-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+}
+
+.menu-card-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card-image::before {
+  transition: transform var(--transition-slow);
+}
+
+.menu-card:hover .menu-card-image::before,
+.menu-card:hover .menu-card-image img {
+  transform: scale(1.1);
+}
+
+.menu-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.menu-card:hover .menu-card-image::after {
+  opacity: 1;
+}
+
+.menu-card-body {
+  padding: 20px;
+}
+
+.menu-card-category {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.menu-card-body h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.menu-card-desc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+  min-height: 38px;
+}
+
+.menu-card-price {
+  margin-top: 14px;
+  font-family: var(--font-en);
+  font-size: 15px;
+  color: var(--white);
+}
+
+/* Modal */
+.menu-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn var(--transition-fast);
+}
+
+.menu-modal {
+  width: min(760px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--dark);
+  border: 1px solid var(--border-thin);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  animation: fadeUp 0.4s var(--ease);
+}
+
+.menu-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+  z-index: 1;
+  padding: 8px 12px;
+  background: rgba(10, 10, 10, 0.6);
+}
+
+.menu-modal-close:hover {
+  color: var(--gold);
+}
+
+.menu-modal-image {
+  height: 100%;
+  min-height: 260px;
+}
+
+.menu-modal-body {
+  padding: 40px 32px;
+}
+
+.menu-modal-body h3 {
+  font-size: 24px;
+  margin: 14px 0 16px;
+}
+
+.menu-modal-desc {
+  color: var(--gray-light);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.menu-modal-price {
+  margin-top: 24px;
+  font-family: var(--font-en);
+  font-size: 22px;
+  color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-search input {
+    width: 100%;
+  }
+
+  .menu-modal {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
